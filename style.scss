@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;600;700&display=swap");
+
+$mobile-size: 375px;
+$desktop-size: 1440px;
+
+$primary-1: hsl(225, 100%, 94%);
+$primary-2: hsl(245, 75%, 52%);
+
+$neutral-1: hsl(225, 100%, 98%);
+$neutral-2: hsl(224, 23%, 55%);
+$neutral-3: hsl(223, 47%, 23%);
+
+$weights-1: 500;
+$weights-2: 600;
+$weights-3: 700;
+
+$font-size: 16px;
+
+$transition-duration: 300ms;
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (max-width: #{$desktop-size - 1px}) {
+    body {
+        background-image: url('./images/pattern-background-mobile.svg');
+    }
+}
+
+body {
+    background-image: url('./images/pattern-background-desktop.svg');
+    background-color: $primary-1;
+    background-repeat: no-repeat;
+    font-family: 'Red Hat Display', sans-serif;
+    color: $neutral-3
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-weight: $weights-3;
+    color: $neutral-3;
+    margin: 0;
+}
+
+.card {
+    $card-border-radius: 10px;
+
+    background-color: white;
+    border-radius: $card-border-radius;
+    max-width: 380px;
+    text-align: center;
+    box-shadow: 0px 20px 10px 3px $primary-1;
+
+    .card-hero {
+        img {
+            max-width: 100%;
+            border-top-right-radius: $card-border-radius;
+            border-top-left-radius: $card-border-radius;
+        }
+    }
+
+    .card-content {
+        font-size: $font-size;
+        color: $neutral-2;
+        padding: 10px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card-actions {
+        $button-gap: 10px;
+
+        display: flex;
+        flex-direction: column;
+        gap: $button-gap;
+
+        .btn {
+            font-weight: $weights-2;
+            border: none;
+            border-radius: 10px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
+            padding: 15px;
+            transition: $transition-duration;
+
+            &:hover {
+                cursor: pointer;
+                transition: $transition-duration;
+            }
+
+            &.btn-primary {
+                background-color: $primary-2;
+                color: white;
+                box-shadow: 0px $button-gap 10px 3px $primary-1;
+
+                &:hover {
+                    filter: brightness(150%);
+                    box-shadow: 0px $button-gap 0px 3px $primary-1;
+                }
+            }
+
+            &.btn-secondary {
+                background: none;
+                font-weight: $weights-3;
+                color: $neutral-2;
+
+                &:hover {
+                    color: $neutral-3;
+                }
+            }
+        }
+    }
+}
+
+.options {
+    background-color: $neutral-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+
+    .plans {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        text-align: left;
+    }
+
+    .action {
+        a {
+            &:hover {
+                text-decoration: none;
+                filter: brightness(110%)
+            }
+        }
+    }
+}
